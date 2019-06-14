@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 28
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        applicationId "com.ArUndigit.Arfurniture"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.9.0"
+}
+
+
+
+
+sceneform.asset('sampledata/Armoire.obj',
+        'default',
+        'sampledata/Armoire.sfa',
+        'src/main/assets/Armoire')
+
+sceneform.asset('sampledata/Bedroom.obj',
+        'default',
+        'sampledata/Bedroom.sfa',
+        'src/main/assets/Bedroom')
+
+sceneform.asset('sampledata/CHAHIN_WOODEN_CHAIR.obj',
+        'default',
+        'sampledata/CHAHIN_WOODEN_CHAIR.sfa',
+        'src/main/assets/CHAHIN_WOODEN_CHAIR')
+
+sceneform.asset('sampledata/Credenza.obj',
+        'default',
+        'sampledata/Credenza.sfa',
+        'src/main/assets/Credenza')
+
+sceneform.asset('sampledata/Desk.obj',
+        'default',
+        'sampledata/Desk.sfa',
+        'src/main/assets/Desk')
+
+sceneform.asset('sampledata/model.obj',
+        'default',
+        'sampledata/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('sampledata/Desk_01.obj',
+        'default',
+        'sampledata/Desk_01.sfa',
+        'src/main/assets/Desk_01')
+
+sceneform.asset('sampledata/sidetable.obj',
+        'default',
+        'sampledata/sidetable.sfa',
+        'src/main/assets/sidetable')
+
+sceneform.asset('sampledata/Sofa_01.obj',
+        'default',
+        'sampledata/Sofa_01.sfa',
+        'src/main/assets/Sofa_01')
+
+sceneform.asset('sampledata/Standing_lamp_01.obj',
+        'default',
+        'sampledata/Standing_lamp_01.sfa',
+        'src/main/assets/Standing_lamp_01')
+
+sceneform.asset('sampledata/Table_Large_Rectangular_01.obj',
+        'default',
+        'sampledata/Table_Large_Rectangular_01.sfa',
+        'src/main/assets/Table_Large_Rectangular_01')
+
+sceneform.asset('sampledata/TV_01(1).obj',
+        'default',
+        'sampledata/TV_01(1).sfa',
+        'src/main/assets/TV_01(1)')
