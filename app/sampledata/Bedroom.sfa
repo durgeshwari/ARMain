@@ -115,7 +115,7 @@
     file: 'sampledata/Bedroom.obj',
     name: 'Bedroom',
     recenter: 'root',
-    scale: 2.9e-05,
+    scale: 0.5,
   },
   version: '0.54:2',
 }

@@ -114,7 +114,7 @@
     file: 'sampledata/Standing_lamp_01.obj',
     name: 'Standing_lamp_01',
     recenter: 'root',
-    scale: 0.35872100000000001,
+    scale: 0.0035872100000000001,
   },
   version: '0.54:2',
 }

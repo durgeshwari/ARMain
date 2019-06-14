@@ -63,7 +63,7 @@
     file: 'sampledata/Armoire.obj',
     name: 'Armoire',
     recenter: 'root',
-    scale: 3.9999999999999998e-06,
+    scale: 0.05,
   },
   version: '0.54:2',
 }

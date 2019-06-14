@@ -114,7 +114,7 @@
     file: 'sampledata/sidetable.obj',
     name: 'sidetable',
     recenter: 'root',
-    scale: 0.499998,
+    scale: 0.0499998,
   },
   version: '0.54:2',
 }

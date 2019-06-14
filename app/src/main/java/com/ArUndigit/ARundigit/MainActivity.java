@@ -475,7 +475,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ModelRenderable.builder()
                     .setSource(this, Uri.parse("Sofa_01.sfb"))
                     .build()
-                    .thenAccept(renderable -> chairRenderable = renderable)
+                    .thenAccept(renderable -> couchRenderable = renderable)
                     .exceptionally(throwable -> {
                         Toast toast =
                                 Toast.makeText(this, "Unable to load couch renderable", Toast.LENGTH_SHORT);
@@ -540,8 +540,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         //setText
 
-                        TextView txt_name = (TextView) viewRenderable.getView();
-                        txt_name.setText(name);
+                        ImageView txt_name = (ImageView) viewRenderable.getView();
+
 
                         txt_name.setOnClickListener(new View.OnClickListener() {
                             @Override

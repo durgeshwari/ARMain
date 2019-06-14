@@ -63,7 +63,7 @@
     file: 'sampledata/TV_01(1).obj',
     name: 'TV_01(1)',
     recenter: 'root',
-    scale: 0.015608,
+    scale: 0.00015608,
   },
   version: '0.54:2',
 }

@@ -37,7 +37,7 @@
     file: 'sampledata/CHAHIN_WOODEN_CHAIR.obj',
     name: 'CHAHIN_WOODEN_CHAIR',
     recenter: 'root',
-    scale: 0.94972699999999999,
+    scale: 0.4972699999999999,
   },
   version: '0.54:2',
 }
