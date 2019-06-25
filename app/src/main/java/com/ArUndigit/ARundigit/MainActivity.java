@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
@@ -83,7 +84,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
            ss_btn = (Button) findViewById(R.id.ss_btn);
             final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.rl);
 
-            ss_btn.setOnClickListener(view -> takePhoto());
+            ss_btn.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              isWriteStoragePermissionGranted();
+                                              takePhoto();
+                                          }
+                                      });
             home_btn=(Button)findViewById(R.id.home_btn);
             home_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -153,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
             switch (requestCode) {
                 case 2:
@@ -182,6 +189,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
         return Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
+//        String date =
+//                new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
+////        return Environment.getExternalStoragePublicDirectory(
+////                Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
+//        File root = android.os.Environment.getExternalStorageDirectory();
+//        File file = new File(root.getAbsolutePath() +  "/Pictures/Sceneform" + date + "_screenshot.jpg");
+//        if (!file.exists()) {
+//            file.mkdirs();
+//        }
+//       String output =  root.getAbsolutePath() + "/Pictures/Sceneform"  +
+//                String.valueOf( date + "_screenshot.jpg");
+//        return output;
     }
 
     private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
@@ -195,7 +214,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
             outputData.writeTo(outputStream);
             outputStream.flush();
-            outputStream.close();
         } catch (IOException ex) {
             throw new IOException("Failed to save bitmap to disk", ex);
         }

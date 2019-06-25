@@ -50,7 +50,7 @@ public class homeActivity extends AppCompatActivity {
         library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(homeActivity.this,MainActivity.class);
+                Intent intent=new Intent(homeActivity.this,LibraryActivity.class);
                 startActivity(intent);
 
             }
