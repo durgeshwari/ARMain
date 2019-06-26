@@ -1,4 +1,4 @@
-package com.ArUndigit.ARundigit;
+package com.ArUndigit.ARundigit.Library;
 
 import android.graphics.Bitmap;
 import android.os.Environment;
@@ -10,6 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.ArUndigit.ARundigit.R;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -28,6 +31,8 @@ public class LibraryActivity extends AppCompatActivity {
 
         imageArraylist = new ArrayList<ImageViewList>();
         ImageView img = (ImageView) findViewById(R.id.image);
+
+        TextView textView=(TextView)findViewById(R.id.textv);
 
         recyclerViewRecordings = (RecyclerView) findViewById(R.id.recyclerview);
         GridLayoutManager mGridLayoutManager = new GridLayoutManager(LibraryActivity.this, 2);
@@ -55,6 +60,7 @@ public class LibraryActivity extends AppCompatActivity {
                 String fileName = files[i].getName();
                 String imageUri = root.getAbsolutePath() + "/Pictures/Sceneform/" + fileName;
 
+                Log.d("files",imageUri);
                 ImageViewList imageViewList = new ImageViewList(imageUri, fileName);
                 imageArraylist.add(imageViewList);
             }

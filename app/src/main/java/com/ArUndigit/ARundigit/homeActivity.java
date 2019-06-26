@@ -9,6 +9,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.ArUndigit.ARundigit.Library.LibraryActivity;
+
 public class homeActivity extends AppCompatActivity {
     ImageView bgapp, clover,create,library;
     LinearLayout textsplash, texthome, menus;
@@ -50,7 +52,7 @@ public class homeActivity extends AppCompatActivity {
         library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(homeActivity.this,LibraryActivity.class);
+                Intent intent=new Intent(homeActivity.this, LibraryActivity.class);
                 startActivity(intent);
 
             }
