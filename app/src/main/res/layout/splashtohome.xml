@@ -1,161 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homeActivity">
 
-    <ImageView
-        android:id="@+id/clover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="272dp"
-        android:elevation="6dp"
-        android:src="@drawable/clover"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <LinearLayout
-        android:id="@+id/textsplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="300dp"
-        android:elevation="6dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A R"
-            android:textStyle="bold"
-            android:textColor="#FFF"
-            android:textSize="50sp" />
+    <com.skyfishjy.library.RippleBackground
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        app:rb_color="#0099CC"
+        app:rb_radius="25dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="6">
+
+        <ImageButton
+            android:id="@+id/create_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_circle_btn"
+          android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/smartphone" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Undigit"
-            android:textColor="#FFF"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/texthome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:elevation="6dp"
-        android:gravity="left"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Explore"
-            android:textColor="#FFF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Simply makes design good"
-            android:textColor="#FFF"
-            android:textSize="16sp" />
-
-    </LinearLayout>
+            android:layout_below="@+id/create_btn"
+android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="Create"
+            android:textAlignment="center"
+            android:textColor="#0E1843"
+            android:textSize="22sp" />
+    </com.skyfishjy.library.RippleBackground>
 
 
-    <LinearLayout
-        android:id="@+id/menus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="280dp"
-        android:elevation="6dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:orientation="horizontal">
-            <LinearLayout
+
+            <ImageView
+                android:id="@+id/lib_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/gallery" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/bitcon"
-                    android:id="@+id/create_btn"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Create"
-                    android:textColor="#0E1843"
-                    android:textSize="22sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:text="Library"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/lib_btn"
+                android:textColor="#0E1843"
+                android:textSize="20sp" />
 
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/bellcon"
-                    android:id="@+id/lib_btn"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Library"
-                    android:textColor="#0E1843"
-                    android:textSize="22sp" />
-
-            </LinearLayout>
-
-
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/bgapp"
-        android:layout_width="526dp"
-        android:layout_height="900dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/bgapp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

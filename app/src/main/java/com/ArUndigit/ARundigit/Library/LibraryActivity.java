@@ -32,7 +32,6 @@ public class LibraryActivity extends AppCompatActivity {
         imageArraylist = new ArrayList<ImageViewList>();
         ImageView img = (ImageView) findViewById(R.id.image);
 
-        TextView textView=(TextView)findViewById(R.id.textv);
 
         recyclerViewRecordings = (RecyclerView) findViewById(R.id.recyclerview);
         GridLayoutManager mGridLayoutManager = new GridLayoutManager(LibraryActivity.this, 2);

@@ -56,7 +56,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
         ImageViewList imageViewList=imgArrayList.get(position);
         File imgFile = new File(imageViewList.getFilname());
-        holder.textView.setText(imageViewList.getFilname());
+
         String path = imageViewList.getUri();
         Bitmap myBitmap = BitmapFactory.decodeFile(path);
         holder.imageView.setImageBitmap(myBitmap);
@@ -106,7 +106,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.img);
-            textView=itemView.findViewById(R.id.textv);
+
             delete=itemView.findViewById(R.id.deletebtn);
 
         }

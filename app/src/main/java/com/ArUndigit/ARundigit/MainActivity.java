@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String TAG="ss";
 
 
-    Button ss_btn,home_btn ;
+    ImageButton ss_btn,home_btn ;
 
 
     private ArFragment arFragment;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-           ss_btn = (Button) findViewById(R.id.ss_btn);
+           ss_btn = (ImageButton) findViewById(R.id.ss_btn);
             final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.rl);
 
             ss_btn.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                               takePhoto();
                                           }
                                       });
-            home_btn=(Button)findViewById(R.id.home_btn);
+            home_btn=(ImageButton)findViewById(R.id.home_btn);
             home_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
