@@ -5,21 +5,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ArUndigit.ARundigit.DetailActivity;
 import com.ArUndigit.ARundigit.R;
+import com.bumptech.glide.Glide;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
+
+import static android.support.constraint.Constraints.TAG;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
 
@@ -58,19 +65,34 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG,"onBindViewHolder: called.");
 
-                ByteArrayOutputStream bStream = new ByteArrayOutputStream();
-                myBitmap.compress(Bitmap.CompressFormat.PNG, 100, bStream);
-                byte[] byteArray = bStream.toByteArray();
 
-                Intent mIntent = new Intent(context, DetailActivity.class);
-                mIntent.putExtra("image", byteArray);
-                context.startActivity(mIntent);
+                        Log.d(TAG, "onClick: " + imgArrayList.get(position));
 
-                //[holder.getAdapterPosition()]
+                       // Toast.makeText(context, imgArrayList.get(position), Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(context, DetailActivity.class);
+                        intent.putExtra("image_url",imgArrayList.get(position).getUri());
+                        context.startActivity(intent);
             }
         });
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                removeItem(holder.getAdapterPosition());
+
+            }
+        });
+            }
+    public void removeItem(int position){
+        imgArrayList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, imgArrayList.size());
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -80,10 +102,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
+        ImageButton delete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.img);
             textView=itemView.findViewById(R.id.textv);
+            delete=itemView.findViewById(R.id.deletebtn);
 
         }
     }
